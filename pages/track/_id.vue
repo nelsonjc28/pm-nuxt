@@ -36,12 +36,17 @@
     },
     asyncData({params}) {
 
-      const id = this.params.id
+      const id = params.id
       return trackService.getById(id).then(res => {
         return {track: res}
       })
 
     },
+    head() {
+      return {
+        title:this.track.name
+      };
+    }
     // computed:{
     //   ...mapState(["track"]),
     //   ...mapGetters(["trackTitle"])
