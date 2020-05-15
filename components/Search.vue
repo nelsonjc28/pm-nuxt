@@ -18,6 +18,9 @@
               .container
                   .columns.is-multiline
                      .column.is-2.is-vcentered.is-offset-5(v-if="isLoading")
+                         propagate-loader.spiner-centered(color="#48c774" :size="30" :loading="isLoading")
+
+                     .column.is-2.is-vcentered.is-offset-5(v-if="isLoading")
                      .column.is-4(v-for="track in tracks" )
                          track-component(:class="{'is-active': track.id === selectedTrack}",
                             v-blur="track.preview_url",

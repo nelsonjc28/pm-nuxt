@@ -19,10 +19,14 @@
               .small {{track.duration_ms | ms-to-mm}}
                   nav.level
                       .level-left
-                          button.level-item.button.is-primary reproducir
+                          button.level-item.button.is-primary
                               span.icon.is-small
-                          nuxt-link.level-item.button.is-info(:to="{ name: 'track-id', params:{id:track.id}}") detalle
+
+                                  font-awesome-icon(icon="play")
+
+                          nuxt-link.level-item.button.is-info(:to="{ name: 'track-id', params:{id:track.id}}")
                               span.icon.is-small
+                                font-awesome-icon(icon="info")
 
 
 

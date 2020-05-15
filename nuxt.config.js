@@ -37,3 +37,10 @@ module.exports = {
   }
 }
 
+export default {
+  plugins: [
+    {src:'~/plugins/Spinners'},
+    {src:'~/plugins/Fontawesome'},
+    ]
+}
+
