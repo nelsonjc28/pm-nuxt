@@ -1,11 +1,26 @@
-<template>
-  <div>
-    <nuxt/>
-  </div>
+<template lang="pug">
+    div
+        header-component
+        nuxt
+        footer-component
 </template>
 
+<script>
+  import HeaderComponent from '~/components/Header.vue';
+  import FooterComponent from '~/components/FooterComponent.vue';
+
+  export default {
+    components:{
+      HeaderComponent,
+      FooterComponent
+    }
+  }
+
+</script>
+
 <style>
-html {
+
+  html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
