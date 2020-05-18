@@ -41,6 +41,7 @@ export default {
   plugins: [
     {src:'~/plugins/Spinners'},
     {src:'~/plugins/Fontawesome'},
+    {src:'~/plugins/Toast'},
     ]
 }
 

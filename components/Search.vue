@@ -23,7 +23,6 @@
                      .column.is-2.is-vcentered.is-offset-5(v-if="isLoading")
                      .column.is-4(v-for="track in tracks" )
                          track-component(:class="{'is-active': track.id === selectedTrack}",
-                            v-blur="track.preview_url",
                            :track="track",
                             @selectTrack="setSelectedTrack")
 
@@ -40,9 +39,11 @@
 
   import trackService from "~/plugins/track";
   import trackComponent from "~/components/Track";
+  import {MapMutations} from "vuex";
 
   export default {
     name: 'SearchComponent',
+
     data() {
       return {
         notificationMsg: '',
@@ -51,10 +52,14 @@
         isLoading: false,
         showNotification: false,
         selectedTrack: '',
-        isSuccessNotification: false
+        isSuccessNotification: false,
       }
     },
     mounted() {
+      // this.$toast.global.my_error()
+
+      // this.$toast.error(`resultados encontrados!`);
+
     },
     methods: {
       search() {
@@ -70,18 +75,18 @@
             })
         }
       },
-      // isNotification(total) {
-      //   this.showNotification = true
-      //   if (total === 0) {
-      //     this.$toast.error('No se encontraron resultados!');
-      //     this.notificationMsg = 'No se encontraron resultados!'
-      //   } else {
-      //     this.$toast.success(`${total} resultados encontrados!`);
-      //     this.notificationMsg = `${total} resultados encontrados!`
-      //     this.isSuccessNotification = true
-      //
-      //   }
-      // },
+      isNotification(total) {
+        // this.showNotification = true
+        // if (total === 0) {
+        //   this.$toast.error('No se encontraron resultados!');
+        //   this.notificationMsg = 'No se encontraron resultados!'
+        // } else {
+        //   this.$toast.success(`${total} resultados encontrados!`);
+        //   this.notificationMsg = `${total} resultados encontrados!`
+        //   this.isSuccessNotification = true
+        //
+        // }
+      },
 
       clear() {
         this.searchQuery = ""

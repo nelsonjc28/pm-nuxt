@@ -25,35 +25,35 @@
 </template>
 
 <script>
-  import trackService from "~/plugins/track";
+  import {mapState,mapGetters,mapActions} from 'vuex'
+
 
   export default {
     name: "TrackDetail",
     data: function () {
       return {
-        track: {},
       }
     },
-    asyncData({params}) {
-
-      const id = params.id
-      return trackService.getById(id).then(res => {
-        return {track: res}
-      })
+    mounted() {
+      const id = this.$route.params.id
+      if(id != this.track.id){
+        this.getTrackById({id})
+      }
 
     },
     head() {
       return {
         title:this.track.name
       };
+    },
+    computed:{
+      ...mapGetters(["trackTitle"]),
+      ...mapState(["track"])
+    },
+    methods:{
+      ...mapActions(["getTrackById"])
+
     }
-    // computed:{
-    //   ...mapState(["track"]),
-    //   ...mapGetters(["trackTitle"])
-    // },
-    // methods:{
-    //   ...mapActions(["getTrackById"])
-    // }
 
   }
 </script>
