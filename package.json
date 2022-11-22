@@ -18,7 +18,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.9",
     "@nuxtjs/toast": "^3.3.0",
     "@saeris/vue-spinners": "^1.0.8",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.8",
     "toastr": "^2.1.4",
     "trae": "^1.4.2",
     "vue-toasted": "^1.1.28"
